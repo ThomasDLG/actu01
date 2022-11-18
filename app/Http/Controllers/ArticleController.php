@@ -46,9 +46,13 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($categorie, $id) {
+        $articles = Categorie::whereSlug($categorie)
+        ->firstOrFail()
+        ->article()
+        ->paginate(3);
         $article = Article::findOrFail($id);
-        $categorie = Categorie::whereId($categorie)->firstOrFail();
-        return view('articles.show', ['categorie', 'article' => $article]);
+        $categorie = Categorie::whereSlug($categorie)->firstOrFail();
+        return view('articles.show', ['categorie' => $categorie, 'article' => $article, 'articles' => $articles]);
     }
 
     /**

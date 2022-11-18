@@ -1,0 +1,18 @@
+//
+// BUTTONS
+//
+
+.btn {
+    padding: 8px 16px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    color: $light;
+    &-primary {
+        background-color: $primary;
+        transition: 0.3s;
+        &:hover {
+            background-color: $secondary;
+            transition: 0.3s;
+        }
+    }
+}

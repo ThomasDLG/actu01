@@ -11,13 +11,13 @@
 <header id="navbar">
     <div class="container">
         <div class="user-nav">
-            <a href="">
+            <a href="{{ route('home')}}">
                 <h1>
                     <img src="/img/logo-actu01.svg" alt="Logo Actu01">
                 </h1>
             </a>
             <div class="user-nav-cta">
-                <a href="">
+                <a class="user-nav-cta-login" href="">
                     <i class="fa-solid fa-circle-user"></i>
                 </a>
                 <a href="" class="btn btn-primary uppercase">S'abonner</a>
@@ -26,17 +26,17 @@
         <div class="links-nav">
             <nav>
                 <ul>
-                    <li><a href=""><i class="fa-solid fa-house"></i></a></li>
+                    <li><a href="{{ route('home') }}"><i class="fa-solid fa-house"></i></a></li>
                     <li><a href="">Le live</a></li>
                     <li><a href="">Newsletter</a></li>
-                    <li><a href="">Météo</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="{{ route('meteo') }}">Météo</a></li>
+                    <li><a href="{{ route('contact.index') }}">Contact</a></li>
+                    <div class="links-nav-search">
+                        <a href="">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                    </div>
                 </ul>
-                <div class="links-nav-search">
-                    <a href="">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
-                </div>
             </nav>
         </div>
     </div>
@@ -47,13 +47,17 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-content-categories">
-                <h4 class="uppercase bold">Rubriques</h4>
+                <h4 class="light uppercase bold">Rubriques</h4>
                 <ul>
-                    <li><a href=""></a></li>
+                    @if(!empty($globalCategories))
+                        @foreach ($globalCategories as $globalCategorie)
+                            <li><a href="{{ route('categories.show', $globalCategorie->slug)}}">{{$globalCategorie->name}}</a></li>
+                        @endforeach
+                    @endif
                 </ul>
             </div>
             <div class="footer-content-login">
-                <h4 class="uppercase bold">Se connecter</h4>
+                <h4 class="light uppercase bold">Se connecter</h4>
                 <ul>
                     <li><a class="uppercase bold" href="">S'abonner</a></li>
                     <li><a class="uppercase bold" href="">Newsletter</a></li>
@@ -61,12 +65,12 @@
                 </ul>
             </div>
             <div class="footer-content-follow">
-                <h4 class="uppercase bold">Suivez Actu-01</h4>
+                <h4 class="light uppercase bold">Suivez Actu-01</h4>
                 <ul>
                     <li><a href=""><i class="fa-solid fa-square-rss"></i></a></li>
                     <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
                     <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="{{ route('contact.index') }}"><i class="fa-solid fa-envelope"></i></a></li>
                 </ul>
             </div>
         </div>

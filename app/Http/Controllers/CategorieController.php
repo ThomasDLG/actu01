@@ -46,11 +46,11 @@ class CategorieController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($categorie) {
-        $articles = Categorie::whereName($categorie)
+        $articles = Categorie::whereSlug($categorie)
         ->firstOrFail()
         ->article()
         ->paginate(9);
-        $categorie = Categorie::whereName($categorie)->firstOrFail();
+        $categorie = Categorie::whereSlug($categorie)->firstOrFail();
         
         return view('categories.show', compact('categorie', 'articles'));
     }

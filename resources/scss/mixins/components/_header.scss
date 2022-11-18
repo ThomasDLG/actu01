@@ -1,0 +1,59 @@
+//
+// HEADER
+//
+
+#navbar {
+    width: 100%;
+    .user-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 12px;
+        &-cta {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            &-login {
+                position: relative;
+                padding: 8px;
+                margin-right: 16px;
+                font-size: 32px;
+                color: $primary;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 10px;
+                    width: 1px;
+                    height: 32px;
+                    background: $primary;
+                }
+            }
+        }
+    }
+    .links-nav {
+        background-color: $light;
+        nav {
+            ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 20px;
+                margin: 0;
+                li {
+                    list-style: none;
+                    display: inline-block;
+                    a {
+                        text-transform: uppercase;
+                        color: $dark-grey;
+                        transition: 0.3s;
+                        &:hover {
+                            color: $primary;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

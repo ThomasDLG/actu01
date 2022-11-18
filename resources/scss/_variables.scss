@@ -25,4 +25,35 @@ body {
 
 // COLORS
 
+$primary: #0094c4;
+$secondary: #263768;
+$dark-grey: #585858;
+$light-grey: #9d9d9d;
+
+$dark: #1a1a1a;
+$light: #f0f0f0;
+
 // TEXT
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Avenir";
+    font-weight: 700;
+    color: $dark;
+}
+h6 {
+    font-family: "Avenir";
+    font-weight: 400;
+    color: $dark-grey;
+}
+
+p {
+    color: $dark;
+}
+
+a {
+    text-decoration: none;
+}

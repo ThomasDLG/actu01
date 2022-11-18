@@ -11,7 +11,9 @@
             @foreach ($articles as $article)
             <div class="articles-content">
                 <div class="articles-content-image">
-                    <img src="{{$article->image}}" alt="">
+                    <a href="{{ route('articles.show', [$categorie->slug, $article->id])}}">
+                        <img src="{{$article->image}}" alt="">
+                    </a>
                 </div>
                 <div class="articles-content-infos">
                     <h4>{{$article->title}}</h4>
