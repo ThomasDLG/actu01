@@ -17,7 +17,7 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            'title'   => fake()->realText(),
+            'title'   => fake()->realText(56),
             'image'   => '/img/thumbnail.jpg',
             'content' => fake()->paragraph(20),
             'when'    => fake()->dateTimeInInterval('1 day', '+365 day')->format('Y-m-d H'),

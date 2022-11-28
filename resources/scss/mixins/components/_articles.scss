@@ -2,6 +2,13 @@
 // ARTICLES
 //
 
+.article {
+    margin: 12px 0;
+    span i {
+        color: $light-grey;
+    }
+}
+
 .articles {
     display: flex;
     flex-wrap: wrap;
@@ -13,6 +20,37 @@
             img {
                 width: 100%;
             }
+        }
+        &-infos-more {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        &-content {
+            display: flex;
+        }
+        &-content-image {
+            height: fit-content;
+            a img {
+                width: 120px;
+            }
+        }
+        &-content-infos {
+            height: 75px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            h4 {
+                margin: 0;
+                padding-left: 10px;
+                font-size: 12px;
+                text-overflow: ellipsis;
+            }
+        }
+        &-content-infos-more {
+            padding-left: 10px;
+            font-size: 10px;
         }
     }
 }

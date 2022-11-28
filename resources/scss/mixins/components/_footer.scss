@@ -7,6 +7,7 @@
     padding: 24px 12px;
     .footer-content {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         &-follow {
             ul {
@@ -32,6 +33,25 @@
                     margin: 8px 0;
                     a {
                         color: $light;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 768px) {
+            &-categories,
+            &-login,
+            &-follow {
+                width: calc(100% - 12px);
+            }
+            &-categories,
+            &-login {
+                border-bottom: 1px solid $light;
+            }
+            &-follow {
+                ul {
+                    justify-content: flex-start;
+                    li {
+                        padding-right: 12px;
                     }
                 }
             }

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -32,11 +35,13 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        //
-    }
 
+        Mail::to('thomas.delage02@gmail.com')->send(new Contact($request));
+        return view('contact.valid');
+    }
+    
     /**
      * Display the specified resource.
      *

@@ -34,7 +34,7 @@
                         <h4>{{$article->title}}</h4>
                         <div class="articles-content-infos-more">
                             <span>Par : <a href="">{{$article->user->name}}</a></span>
-                            <span>{{$article->created_at}}</span>
+                            <span>{{ \Carbon\Carbon::parse($article->when)->toFormattedDateString() }}</span>
                         </div>
                     </div>
                 </div>

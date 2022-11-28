@@ -19,11 +19,7 @@ use App\Http\Controllers\CategorieController;
 */
 
 // HOME
-Route::get('/', function () {
-    return view('welcome');
-});
-// HOME
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 // CATEGORIES
 Route::get('/rubrique/{categorie}', [CategorieController::class, 'show'])->name('categories.show');
 // ARTICLES

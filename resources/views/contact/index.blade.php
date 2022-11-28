@@ -48,7 +48,9 @@
                         </div>
                     @enderror
                 </div>
-                <button type="submit">S'abonner</button>
+                <div class="input-form-button">
+                    <button class="btn btn-primary uppercase" type="submit">Envoyer</button>
+                </div>
             </form>
         </div>
     </div>
