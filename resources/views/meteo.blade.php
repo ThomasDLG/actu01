@@ -1,9 +1,9 @@
 <?php
     $meteoIcons = array(
         "Clear" => '<i class="fa-solid fa-sun"></i>',
-        "Clouds	" => '<i class="fa-solid fa-sun-cloud"></i>',
+        "Clouds" => '<i class="fa-solid fa-cloud"></i>',
         "Drizzle" => '<i class="fa-solid fa-cloud-showers-heavy"></i>',
-        "Rain" => '<i class="fa-solid fa-cloud-sun-rain"></i>',
+        "Rain" => '<i class="fa-solid fa-cloud-showers-heavy"></i>',
         "Thunderstorm" => '<i class="fa-solid fa-cloud-bolt"></i>',
         "Snow" => '<i class="fa-solid fa-snowflake"></i>',
         "Mist" => '<i class="fa-solid fa-cloud-fog"></i>',
@@ -36,7 +36,10 @@
                 </div>
             </div>
             <div class="meteo-icon">
-
+                <?php
+                    $condition = $current['condition']['name'];
+                    echo $meteoIcons[$condition];
+                ?>
             </div>
         </div>
     </div>

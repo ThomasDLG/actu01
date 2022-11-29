@@ -60,6 +60,11 @@ p {
 a {
     color: $secondary;
     text-decoration: none;
+    transition: 0.3s;
+    &:hover {
+        color: $primary;
+        transition: 0.3s;
+    }
 }
 
 img {
