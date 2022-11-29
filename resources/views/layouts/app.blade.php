@@ -37,7 +37,7 @@
                     <ul>
                         <li><a href="{{ route('home.index') }}"><i class="fa-solid fa-house"></i></a></li>
                         <li><a href="{{ route('live.show') }}">Le live</a></li>
-                        <li><a href="">Newsletter</a></li>
+                        <li><a href="{{ route('newsletter.index') }}">Newsletter</a></li>
                         <li><a href="{{ route('meteo') }}">Météo</a></li>
                         <li><a href="{{ route('contact.index') }}">Contact</a></li>
                         <div class="links-nav-search">
@@ -48,6 +48,22 @@
                     </ul>
                 </nav>
             </div>
+            {{-- SEARCHBAR --}}
+            <div class="user-nav-searchbar">
+                <form action="">
+                    @csrf
+                    <div class="input-form">
+                        <input type="text" name="search" id="search" placeholder="Rechercher">
+                    </div>
+                    <div class="input-form-button">
+                        <button class="btn btn-primary uppercase" type="submit">ok</button>
+                    </div>
+                </form>
+                <div class="input-form-button-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            {{-- END SEARCHBAR --}}
             {{-- BURGER MENU --}}
             <div class="user-nav-burger-menu">
                 <nav>

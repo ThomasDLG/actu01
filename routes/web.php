@@ -8,6 +8,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\NewsletterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::get('/article/{categorie}/{id}', [ArticleController::class, 'show'])->nam
 // LE LIVE
 Route::get('/live', [LiveController::class, 'show'])->name('live.show');
 // NEWSLETTER
+Route::get('/newsletter', [NewsletterController::class, 'index'])->name('newsletter.index');
+Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');
 // METEO
 Route::get('/meteo', [MeteoController::class, 'show'])->name('meteo');
 // CONTACT
