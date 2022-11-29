@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LiveController;
 use App\Http\Controllers\MeteoController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
@@ -26,6 +27,7 @@ Route::get('/rubrique/{categorie}', [CategorieController::class, 'show'])->name(
 // ARTICLES
 Route::get('/article/{categorie}/{id}', [ArticleController::class, 'show'])->name('articles.show');
 // LE LIVE
+Route::get('/live', [LiveController::class, 'show'])->name('live.show');
 // NEWSLETTER
 // METEO
 Route::get('/meteo', [MeteoController::class, 'show'])->name('meteo');

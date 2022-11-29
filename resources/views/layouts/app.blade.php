@@ -36,7 +36,7 @@
                 <nav>
                     <ul>
                         <li><a href="{{ route('home.index') }}"><i class="fa-solid fa-house"></i></a></li>
-                        <li><a href="">Le live</a></li>
+                        <li><a href="{{ route('live.show') }}">Le live</a></li>
                         <li><a href="">Newsletter</a></li>
                         <li><a href="{{ route('meteo') }}">Météo</a></li>
                         <li><a href="{{ route('contact.index') }}">Contact</a></li>

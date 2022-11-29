@@ -6,10 +6,11 @@
 @section('content')
 <article>
     <div class="container">
-        <h2 class="tags">{{$categorie->name}}</h2>
+        <h2 class="tags">Le Live</h2>
         <div class="articles">
+            {{-- {{dd($categorie)}} --}}
             @foreach ($articles as $article)
-                <x-categorie :$categorie :$article/>
+                <x-live-articles :$article :$categorie/>
             @endforeach
         </div>
     </div>
