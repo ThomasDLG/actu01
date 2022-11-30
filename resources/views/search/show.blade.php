@@ -1,18 +1,18 @@
 @extends('layouts.app')
 @section('title')
-    Actu01 - Rubriques
+    Actu01 - Recherche
 @endsection
 
 @section('content')
 <article>
     <div class="container">
-        <h2 class="tags">{{$categorie->name}}</h2>
+        <h2 class="tags">Recherche</h2>
         <div class="articles">
+            {{-- {{dd($categorie)}} --}}
             @foreach ($articles as $article)
-                <x-categorie :$categorie :$article/>
+                <x-live-articles :$article :$categorie/>
             @endforeach
         </div>
-        {{ $articles->links() }}
     </div>
 </article>
 @endsection

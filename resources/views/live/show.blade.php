@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    Actu01 - Rubriques
+    Actu01 - Le live
 @endsection
 
 @section('content')

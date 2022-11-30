@@ -36,3 +36,19 @@ export const dropdownMenuToggle = (button, menu, activeClass) => {
     });
     // }
 };
+
+export const openSearchBar = (button, searchbar, activeClass, close) => {
+    const searchbarToggle = document.querySelector(button);
+    const searchbarBlock = document.querySelector(searchbar);
+    const searchbarClose = document.querySelector(close);
+
+    // if (dropdownToggle && dropdownMenu) {
+    searchbarToggle.addEventListener("click", () => {
+        console.log("click");
+        searchbarBlock.classList.add(activeClass);
+    });
+    searchbarClose.addEventListener("click", () => {
+        searchbarBlock.classList.remove(activeClass);
+    });
+    // }
+};

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LiveController;
 use App\Http\Controllers\MeteoController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
@@ -23,6 +24,8 @@ use App\Http\Controllers\NewsletterController;
 
 // HOME
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+// SEARCH
+Route::get('/search', [SearchController::class, 'show'])->name('search.show');
 // CATEGORIES
 Route::get('/rubrique/{categorie}', [CategorieController::class, 'show'])->name('categories.show');
 // ARTICLES
