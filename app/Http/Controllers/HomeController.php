@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,39 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        return view('home.index');
+
+        $categorie = Categorie::orderBy('id')->get();
+
+        // A NE PAS MANQUER
+
+        $dontMissArticles = Article::where('categorie_id', '=', 2)->get();
+
+        // FAITS DIVERS
+
+        $miscArticles = Article::where('categorie_id', '=', 1)->limit(3)->get();
+
+        // SPORTS
+
+        $sportsArticles = Article::where('categorie_id', '=', 3)->limit(3)->get();
+
+        // CULTURE
+
+        $cultureArticles = Article::where('categorie_id', '=', 7)->limit(3)->get();
+
+        // LES PLUS LUS
+
+        // LE LIVE
+
+        $liveArticles = Article::orderBy('when')->limit(9)->get();
+
+        return view('home.index', compact(
+            'dontMissArticles',
+            'miscArticles',
+            'sportsArticles',
+            'cultureArticles',
+            'liveArticles',
+            'categorie'
+        ));
     }
 
     /**
