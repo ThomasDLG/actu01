@@ -13,6 +13,7 @@ class SearchController extends Controller
         // dd($request->search);
         $articles = Article::where('title', 'like', '%'.$request->search.'%')->paginate(9);
         $categorie = Categorie::orderBy('id')->get();
+        $articles->appends(['search' => $request->search]);
         return view('search.show', compact('articles', 'categorie'));
     }
 }

@@ -13,6 +13,7 @@
                 <x-live-articles :$article :$categorie/>
             @endforeach
         </div>
+        {{ $articles->links() }}
     </div>
 </article>
 @endsection
