@@ -30,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
             $view->with('globalCategories', Categorie::all());
         });
         Paginator::useBootstrapFive();
+        \Carbon\Carbon::setLocale('fr');
     }
 }

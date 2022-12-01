@@ -115,6 +115,10 @@
         scroll-snap-align: start;
         margin: 0 12px 12px 12px;
         border-bottom: 1px solid $dark-grey;
+        &-infos-more {
+            display: flex;
+            justify-content: space-between;
+        }
         &-image {
             position: relative;
             span {

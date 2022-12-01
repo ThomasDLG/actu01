@@ -27,6 +27,7 @@
                 <x-home-categorie :$categorie :$article />
             @endforeach
         </div>
+        <a class="btn btn-primary" href="{{ route('categories.show', 'faits-divers')}}">Voir tous</a>
     </div>
 </article>
 
@@ -40,6 +41,7 @@
                 <x-home-categorie :$categorie :$article />
             @endforeach
         </div>
+        <a class="btn btn-primary" href="{{ route('categories.show', 'sports')}}">Voir tous</a>
     </div>
 </article>
 
@@ -53,6 +55,7 @@
                 <x-home-categorie :$categorie :$article />
             @endforeach
         </div>
+        <a class="btn btn-primary" href="{{ route('categories.show', 'culture')}}">Voir tous</a>
     </div>
 </article>
 
