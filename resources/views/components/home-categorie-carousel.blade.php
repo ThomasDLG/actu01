@@ -3,6 +3,7 @@
         <a href="{{ route('articles.show', [$article->categorie->slug, $article->id])}}">
             <img src="{{$article->image}}" alt="">
         </a>
+        <span>{{ $article->categorie->name}}</span>
     </div>
     <div class="home-articles-carousel-content-infos">
         <h4>{{$article->title}}</h4>

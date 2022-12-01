@@ -28,14 +28,14 @@
                 <div class="user-nav-cta">
                     @auth()
                     <a class="user-nav-cta-loged" href="{{ route('login')}}">
-                        {{$user->name}}
+                        {{Auth::user()->name}}
                     </a>
                     @else
                     <a class="user-nav-cta-login" href="{{ route('login')}}">
                         <i class="fa-solid fa-circle-user"></i>
                     </a>
                     @endauth
-                    <a href="" class="btn btn-primary uppercase">S'abonner</a>
+                    <a href="{{ route('register')}}" class="btn btn-primary uppercase">S'abonner</a>
                 </div>
             </div>
             <div class="links-nav">
@@ -82,9 +82,9 @@
                                 </div>
                             <i class="fa-solid fa-angle-right"></i>
                         </li>
-                        <li class="burger-list-item"><a href="">Se connecter <i class="fa-solid fa-angle-right"></i></a></li>
-                        <li class="burger-list-item"><a href="">Mon compte <i class="fa-solid fa-angle-right"></i></a></li>
-                        <li class="burger-list-item"><a href="">S'abonner <i class="fa-solid fa-angle-right"></i></a></li>
+                        <li class="burger-list-item"><a href="{{ route('login')}}">Se connecter <i class="fa-solid fa-angle-right"></i></a></li>
+                        <li class="burger-list-item"><a href="{{ route('dashboard')}}">Mon compte <i class="fa-solid fa-angle-right"></i></a></li>
+                        <li class="burger-list-item"><a href="{{ route('register')}}">S'abonner <i class="fa-solid fa-angle-right"></i></a></li>
                         <li class="burger-list-item">
                             <a href="#">Rubriques <i class="fa-solid fa-angle-right"></i></a>
                             <ul class="burger-list-item-dropdown">
@@ -123,9 +123,9 @@
             <div class="footer-content-login">
                 <h4 class="light uppercase bold">Se connecter</h4>
                 <ul>
-                    <li><a class="uppercase bold" href="">S'abonner</a></li>
-                    <li><a class="uppercase bold" href="">Newsletter</a></li>
-                    <li><a class="uppercase bold" href="">Mon compte</a></li>
+                    <li><a class="uppercase bold" href="{{ route('register')}}">S'abonner</a></li>
+                    <li><a class="uppercase bold" href="{{ route('newsletter.index')}}">Newsletter</a></li>
+                    <li><a class="uppercase bold" href="{{ route('dashboard')}}">Mon compte</a></li>
                 </ul>
             </div>
             <div class="footer-content-follow">

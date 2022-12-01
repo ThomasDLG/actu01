@@ -62,6 +62,7 @@
 
 <article>
     <div class="container">
+        <h2 class="tags">LE LIVE</h2>
         <div class="home-articles-carousel">
             @foreach ($liveArticles as $article)
                 <x-home-categorie-carousel :$categorie :$article />

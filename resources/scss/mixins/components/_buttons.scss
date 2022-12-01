@@ -16,4 +16,12 @@
             transition: 0.3s;
         }
     }
+    &-secondary {
+        background-color: $light-grey;
+        transition: 0.3s;
+        &:hover {
+            background-color: $dark-grey;
+            transition: 0.3s;
+        }
+    }
 }

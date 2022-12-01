@@ -113,7 +113,20 @@
         min-width: 290px;
         display: inline-block;
         scroll-snap-align: start;
-        margin: 0 12px;
+        margin: 0 12px 12px 12px;
+        border-bottom: 1px solid $dark-grey;
+        &-image {
+            position: relative;
+            span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: $primary;
+                color: $light;
+                padding: 6px;
+                border-bottom-right-radius: 16px;
+            }
+        }
     }
     /* width */
     &::-webkit-scrollbar {
