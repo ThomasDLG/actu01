@@ -26,9 +26,15 @@
                     </a>
                 </div>
                 <div class="user-nav-cta">
-                    <a class="user-nav-cta-login" href="">
+                    @auth()
+                    <a class="user-nav-cta-loged" href="{{ route('login')}}">
+                        {{$user->name}}
+                    </a>
+                    @else
+                    <a class="user-nav-cta-login" href="{{ route('login')}}">
                         <i class="fa-solid fa-circle-user"></i>
                     </a>
+                    @endauth
                     <a href="" class="btn btn-primary uppercase">S'abonner</a>
                 </div>
             </div>
@@ -89,11 +95,11 @@
                                 @endif
                             </ul>
                         </li>
-                        <li class="burger-list-item"><a href="">Le live <i class="fa-solid fa-angle-right"></i></a></li>
-                        <li class="burger-list-item"><a href="">Newsletter <i class="fa-solid fa-angle-right"></i></a></li>
-                        <li class="burger-list-item"><a href="">Météo <i class="fa-solid fa-angle-right"></i></a></li>
-                        <li class="burger-list-item"><a href="">Contact <i class="fa-solid fa-angle-right"></i></a></li>
-                        <li class="burger-list-item"><a href="">Mentions légales <i class="fa-solid fa-angle-right"></i></a></li>
+                        <li class="burger-list-item"><a href="{{ route('live.show') }}">Le live <i class="fa-solid fa-angle-right"></i></a></li>
+                        <li class="burger-list-item"><a href="{{ route('newsletter.index') }}">Newsletter <i class="fa-solid fa-angle-right"></i></a></li>
+                        <li class="burger-list-item"><a href="{{ route('meteo') }}">Météo <i class="fa-solid fa-angle-right"></i></a></li>
+                        <li class="burger-list-item"><a href="{{ route('contact.index') }}">Contact <i class="fa-solid fa-angle-right"></i></a></li>
+                        <li class="burger-list-item"><a href="{{ route('mentions') }}">Mentions légales <i class="fa-solid fa-angle-right"></i></a></li>
                     </ul>
                 </nav>
             </div>

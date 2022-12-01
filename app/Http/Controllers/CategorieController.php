@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
@@ -61,9 +62,13 @@ class CategorieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function writer($writer)
     {
-        //
+        $articles = Article::where('user_id', '=', $writer)
+        ->paginate(9);
+        $categorie = Categorie::orderBy('id')->get();
+        
+        return view('articles.writer', compact('categorie', 'articles'));
     }
 
     /**

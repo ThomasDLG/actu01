@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
@@ -13,10 +14,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {   
 
         $categorie = Categorie::orderBy('id')->get();
+        $user = $request->user();
 
         // A NE PAS MANQUER
 
@@ -46,7 +48,8 @@ class HomeController extends Controller
             'sportsArticles',
             'cultureArticles',
             'liveArticles',
-            'categorie'
+            'categorie',
+            'user'
         ));
     }
 

@@ -36,13 +36,30 @@
                 position: relative;
                 padding: 8px;
                 margin-right: 16px;
-                font-size: 32px;
+                color: $primary;
+                i {
+                    font-size: 32px;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        top: 10px;
+                        width: 1px;
+                        height: 32px;
+                        background: $primary;
+                    }
+                }
+            }
+            &-loged {
+                position: relative;
+                padding: 8px;
+                margin-right: 16px;
                 color: $primary;
                 &::after {
                     content: "";
                     position: absolute;
                     right: 0;
-                    top: 10px;
+                    top: 2px;
                     width: 1px;
                     height: 32px;
                     background: $primary;
@@ -185,10 +202,10 @@
                 width: calc(768px - 32px);
             }
             @media screen and (max-width: 768px) {
-                width: calc(425px - 32px);
+                width: calc(100% - 32px);
             }
             @media screen and (max-width: 425px) {
-                width: calc(320px - 32px);
+                width: calc(100% - 32px);
             }
         }
     }

@@ -27,9 +27,14 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 // SEARCH
 Route::get('/search', [SearchController::class, 'show'])->name('search.show');
 // CATEGORIES
-Route::get('/rubrique/{categorie}', [CategorieController::class, 'show'])->name('categories.show');
+Route::controller(CategorieController::class)->group(function() {
+    Route::get('/rubrique/{categorie}', 'show')->name('categories.show');
+    Route::get('/redacteurs/{writer}', 'writer')->name('articles.writer');
+});
 // ARTICLES
-Route::get('/article/{categorie}/{id}', [ArticleController::class, 'show'])->name('articles.show');
+Route::controller(ArticleController::class)->group(function() {
+    Route::get('/article/{categorie}/{id}', 'show')->name('articles.show');
+});
 // LE LIVE
 Route::get('/live', [LiveController::class, 'show'])->name('live.show');
 // NEWSLETTER
@@ -41,6 +46,9 @@ Route::get('/meteo', [MeteoController::class, 'show'])->name('meteo');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 // MENTIONS LÉGALES
+Route::get('/mentions', function () {
+    return view('mentions');
+})->name('mentions');
 
 
 Route::get('/dashboard', function () {
