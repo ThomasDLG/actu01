@@ -40,7 +40,7 @@ class HomeController extends Controller
 
         // LE LIVE
 
-        $liveArticles = Article::orderBy('when')->limit(9)->orderBy('when', 'desc')->get();
+        $liveArticles = Article::orderBy('when', 'desc')->limit(9)->get();
 
         return view('home.index', compact(
             'dontMissArticles',

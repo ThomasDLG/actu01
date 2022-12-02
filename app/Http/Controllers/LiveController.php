@@ -47,7 +47,7 @@ class LiveController extends Controller
      */
     public function show() {
 
-        $articles = Article::orderBy('when')->limit(9)->get();
+        $articles = Article::orderBy('when', 'desc')->limit(9)->get();
         $categorie = Categorie::orderBy('id')->get();
         return view('live.show', compact('articles', 'categorie'));
     }
