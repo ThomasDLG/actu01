@@ -23,11 +23,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::factory()
-        ->count(10)
+        ->count(60)
         ->create();
 
         Article::factory()
-        ->count(50)
+        ->count(500)
         ->create();
 
     }
