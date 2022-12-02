@@ -77,6 +77,10 @@ composer install
 npm install
 ```
 
+```
+nano .env
+```
+
 ### Modify .ENV file for DB_CONNECTION
 
 ```
