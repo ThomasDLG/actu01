@@ -22,25 +22,25 @@ class HomeController extends Controller
 
         // A NE PAS MANQUER
 
-        $dontMissArticles = Article::where('categorie_id', '=', 2)->get();
+        $dontMissArticles = Article::where('categorie_id', '=', 2)->orderBy('when', 'desc')->get();
 
         // FAITS DIVERS
 
-        $miscArticles = Article::where('categorie_id', '=', 1)->limit(3)->get();
+        $miscArticles = Article::where('categorie_id', '=', 1)->orderBy('when', 'desc')->limit(3)->get();
 
         // SPORTS
 
-        $sportsArticles = Article::where('categorie_id', '=', 3)->limit(3)->get();
+        $sportsArticles = Article::where('categorie_id', '=', 3)->orderBy('when', 'desc')->limit(3)->get();
 
         // CULTURE
 
-        $cultureArticles = Article::where('categorie_id', '=', 7)->limit(3)->get();
+        $cultureArticles = Article::where('categorie_id', '=', 7)->orderBy('when', 'desc')->limit(3)->get();
 
         // LES PLUS LUS
 
         // LE LIVE
 
-        $liveArticles = Article::orderBy('when')->limit(9)->get();
+        $liveArticles = Article::orderBy('when')->limit(9)->orderBy('when', 'desc')->get();
 
         return view('home.index', compact(
             'dontMissArticles',

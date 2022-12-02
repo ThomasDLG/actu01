@@ -50,7 +50,7 @@ class ArticleController extends Controller
         ->firstOrFail()
         ->article()
         ->paginate(3);
-        $article = Article::findOrFail($id);
+        $article = Article::findOrFail($id)->orderBy('when', 'desc');
         $categorie = Categorie::whereSlug($categorie)->firstOrFail();
         return view('articles.show', ['categorie' => $categorie, 'article' => $article, 'articles' => $articles]);
     }
