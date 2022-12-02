@@ -68,8 +68,17 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Installation
 
 ```
+git clone https://github.com/ThomasDLG/actu01.git
+cd actu01
+```
+
+```
 php artisan db:migration
 php artisan db:seed
+```
+
+```
+php artisan storage:link
 ```
 
 ```
