@@ -78,7 +78,7 @@ npm install
 ```
 
 ```
-php artisan db:migration
+php artisan migrate
 php artisan db:seed
 ```
 
