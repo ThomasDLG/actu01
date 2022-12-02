@@ -73,6 +73,11 @@ cd actu01
 ```
 
 ```
+composer install
+npm install
+```
+
+```
 php artisan db:migration
 php artisan db:seed
 ```
