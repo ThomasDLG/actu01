@@ -50,6 +50,7 @@ class CategorieController extends Controller
         $articles = Categorie::whereSlug($categorie)
         ->firstOrFail()
         ->article()
+        ->orderBy('when', 'desc')
         ->paginate(9);
         $categorie = Categorie::whereSlug($categorie)->firstOrFail();
         
